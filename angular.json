@@ -25,9 +25,37 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/libs/bootstrap/css/bootstrap.min.css",
+              "src/assets/css/styles.min.css",
+              "src/assets/css/icons.css",
+              "src/assets/libs/node-waves/waves.min.css",
+              "src/assets/libs/simplebar/simplebar.min.css",
+              "src/assets/libs/flatpickr/flatpickr.min.css",
+              "src/assets/libs/@simonwep/pickr/themes/nano.min.css",
+              "src/assets/libs/choices.js/public/assets/styles/choices.min.css"
+
+
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/libs/choices.js/public/assets/scripts/choices.min.js",
+              "src/assets/js/main.js",
+              "src/assets/libs/@popperjs/core/umd/popper.min.js",
+              "src/assets/libs/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/js/defaultmenu.min.js",
+              "src/assets/libs/node-waves/waves.min.js",
+              "src/assets/js/sticky.js",
+              "src/assets/libs/simplebar/simplebar.min.js",
+              "src/assets/libs/@simonwep/pickr/pickr.es5.min.js",
+              "src/assets/js/simplebar.js",
+              "src/assets/libs/apexcharts/apexcharts.min.js",
+              "src/assets/libs/jsvectormap/js/jsvectormap.min.js",
+              "src/assets/libs/jsvectormap/maps/world-merc.js",
+              "src/assets/js/us-merc-en.js",
+              "src/assets/js/index.js"
+
+
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +122,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "7751b52e-707b-4735-9492-795a7a7a732e"
   }
 }
