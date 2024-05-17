@@ -7,13 +7,14 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { VendeurModule } from './vendeur/vendeur.module';
 import { MembershipModule } from './membership/membership.module';
-import { RouterModule } from '@angular/router';
+import {EditprofileComponent} from "./vendeur/editprofile/editprofile.component";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-   
+    HomeComponent
+
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,6 @@ import { RouterModule } from '@angular/router';
     VendeurModule,
     MembershipModule,
     RouterModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
