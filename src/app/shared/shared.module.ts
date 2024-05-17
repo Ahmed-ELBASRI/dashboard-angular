@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { TopHeaderComponent } from './top-header/top-header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
-import {RouterLink} from "@angular/router";
+import {RouterLink, RouterModule} from "@angular/router";
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -12,12 +13,12 @@ import {RouterLink} from "@angular/router";
     TopHeaderComponent,
     SidebarComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
   ],
-    imports: [
-        CommonModule,
-        RouterLink
-    ],
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
   exports: [
     TopHeaderComponent,
     SidebarComponent,

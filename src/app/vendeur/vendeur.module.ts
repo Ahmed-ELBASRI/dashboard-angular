@@ -4,6 +4,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { SharedModule } from '../shared/shared.module';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     SharedModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
     // VendeurModule
