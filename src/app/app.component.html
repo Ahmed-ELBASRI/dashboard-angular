@@ -1,9 +1,21 @@
-
-
-
-
     <!-- Start Switcher -->
-    <router-outlet></router-outlet>
+    <div id="loader" >
+        <img src="assets/images/media/loader.svg" alt="">
+    </div>
+    <div class="page">
+         <header class="app-header">
+         <app-top-header></app-top-header> 
+        </header>
+        <app-sidebar></app-sidebar>
+        <router-outlet></router-outlet>
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <app-footer></app-footer>
+        </footer>
+    </div>
+    <div class="scrollToTop">
+        <span class="arrow"><i class="las la-angle-double-up"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
     <!-- End Switcher -->
 
 
