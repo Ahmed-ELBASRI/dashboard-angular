@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CommandesComponent } from './commandes.component';
+import { CommandsComponent } from './commands.component';
 
-describe('CommandesComponent', () => {
-  let component: CommandesComponent;
-  let fixture: ComponentFixture<CommandesComponent>;
+describe('CommandsComponent', () => {
+  let component: CommandsComponent;
+  let fixture: ComponentFixture<CommandsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CommandesComponent]
+      declarations: [CommandsComponent]
     });
-    fixture = TestBed.createComponent(CommandesComponent);
+    fixture = TestBed.createComponent(CommandsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
