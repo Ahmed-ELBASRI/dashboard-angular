@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { VendeurModule } from './vendeur/vendeur.module';
 import {RouterModule} from "@angular/router";
+import { ElementsModule } from './elements/elements.module';
 
 @NgModule({
   declarations: [
