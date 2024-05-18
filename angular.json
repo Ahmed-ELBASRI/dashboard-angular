@@ -36,6 +36,13 @@
               "src/assets/libs/choices.js/public/assets/styles/choices.min.css"
 
 
+
+      
+            
+
+
+
+
             ],
             "scripts": [
               "src/assets/libs/choices.js/public/assets/scripts/choices.min.js",
@@ -53,6 +60,10 @@
               "src/assets/libs/jsvectormap/maps/world-merc.js",
               "src/assets/js/us-merc-en.js",
               "src/assets/js/index.js"
+
+
+
+
 
 
             ]
