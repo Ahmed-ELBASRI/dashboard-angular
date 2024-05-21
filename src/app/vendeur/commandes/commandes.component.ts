@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./commandes.component.css']
 })
 export class CommandesComponent {
-
+ 
 }
