@@ -1,21 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RetoursComponent } from './retours/retours.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { CommandsComponent } from './commands/commands.component';
-import { ProductsComponent } from './products/products.component';
-import { AttProductsComponent } from './attproducts/attproducts.component';
-import { PhotoProductsComponent } from './photoproducts/photo-products.component';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CommandDetailsComponent } from './command-details/command-details.component';
+
+
 
 @NgModule({
   declarations: [
+    RetoursComponent,
     CommandsComponent,
-    ProductsComponent,
-    AttProductsComponent,
-    PhotoProductsComponent,
+    CommandDetailsComponent
   ],
-  imports: [CommonModule, FormsModule, RouterModule, SharedModule],
-  exports: [],
+  imports: [
+    CommonModule,
+    RouterModule,
+    SharedModule,
+    HttpClientModule
+  ],
+  exports:[
+  ]
 })
 export class ElementsModule {}

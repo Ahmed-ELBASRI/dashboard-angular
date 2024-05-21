@@ -32,127 +32,27 @@
                 style="width: 100%"
               >
                 <div class="gridjs-wrapper" style="height: auto">
-                  <table role="grid" class="gridjs-table" style="height: auto">
-                    <thead class="gridjs-thead">
-                      <tr class="gridjs-tr">
-                        <th
-                          data-column-id="date"
-                          class="gridjs-th"
-                          style="width: 150px"
-                        >
-                          <div class="gridjs-th-content">Date</div>
-                        </th>
-                        <th
-                          data-column-id="name"
-                          class="gridjs-th"
-                          style="width: 150px"
-                        >
-                          <div class="gridjs-th-content">Name</div>
-                        </th>
-                        <th
-                          data-column-id="email"
-                          class="gridjs-th"
-                          style="width: 200px"
-                        >
-                          <div class="gridjs-th-content">Email</div>
-                        </th>
-                        <th
-                          data-column-id="id"
-                          class="gridjs-th"
-                          style="width: 150px"
-                        >
-                          <div class="gridjs-th-content">ID</div>
-                        </th>
-                        <th
-                          data-column-id="price"
-                          class="gridjs-th"
-                          style="width: 100px"
-                        >
-                          <div class="gridjs-th-content">Price</div>
-                        </th>
-                        <th
-                          data-column-id="quantity"
-                          class="gridjs-th"
-                          style="width: 100px"
-                        >
-                          <div class="gridjs-th-content">Quantity</div>
-                        </th>
-                        <th
-                          data-column-id="total"
-                          class="gridjs-th"
-                          style="width: 100px"
-                        >
-                          <div class="gridjs-th-content">Total</div>
-                        </th>
+                  <table role="grid" class="table table-bordered">
+                    <thead class="thead-light">
+                      <tr>
+                        <th style="width: 100px;">ID</th>
+                        <th style="width: 200px;">Date</th>
+                        <th style="width: 150px;">Etat</th>
+                        <th style="width: 100px;">Total</th>
+                        <th style="width: 100px;">ClientId</th>
+                        <th style="width: 100px;">Actions</th>
                       </tr>
                     </thead>
-                    <tbody class="gridjs-tbody">
-                      <tr class="gridjs-tr">
-                        <td data-column-id="date" class="gridjs-td">
-                          24-10-2022 12:47
-                        </td>
-                        <td data-column-id="name" class="gridjs-td">john</td>
-                        <td data-column-id="email" class="gridjs-td">
-                          john123@gmail.com
-                        </td>
-                        <td data-column-id="id" class="gridjs-td">#12012</td>
-                        <td data-column-id="price" class="gridjs-td">$1799</td>
-                        <td data-column-id="quantity" class="gridjs-td">1</td>
-                        <td data-column-id="total" class="gridjs-td">$1799</td>
-                      </tr>
-                      <tr class="gridjs-tr">
-                        <td data-column-id="date" class="gridjs-td">
-                          12-09-2022 04:24
-                        </td>
-                        <td data-column-id="name" class="gridjs-td">mark</td>
-                        <td data-column-id="email" class="gridjs-td">
-                          markzenner23@gmail.com
-                        </td>
-                        <td data-column-id="id" class="gridjs-td">#12013</td>
-                        <td data-column-id="price" class="gridjs-td">$2479</td>
-                        <td data-column-id="quantity" class="gridjs-td">2</td>
-                        <td data-column-id="total" class="gridjs-td">$4958</td>
-                      </tr>
-                      <tr class="gridjs-tr">
-                        <td data-column-id="date" class="gridjs-td">
-                          18-11-2022 18:43
-                        </td>
-                        <td data-column-id="name" class="gridjs-td">eoin</td>
-                        <td data-column-id="email" class="gridjs-td">
-                          eoin1992@gmail.com
-                        </td>
-                        <td data-column-id="id" class="gridjs-td">#12014</td>
-                        <td data-column-id="price" class="gridjs-td">$769</td>
-                        <td data-column-id="quantity" class="gridjs-td">1</td>
-                        <td data-column-id="total" class="gridjs-td">$769</td>
-                      </tr>
-                      <tr class="gridjs-tr">
-                        <td data-column-id="date" class="gridjs-td">
-                          10-09-2022 10:35
-                        </td>
-                        <td data-column-id="name" class="gridjs-td">
-                          sarahcdd
-                        </td>
-                        <td data-column-id="email" class="gridjs-td">
-                          sarahcdd129@gmail.com
-                        </td>
-                        <td data-column-id="id" class="gridjs-td">#12015</td>
-                        <td data-column-id="price" class="gridjs-td">$1299</td>
-                        <td data-column-id="quantity" class="gridjs-td">3</td>
-                        <td data-column-id="total" class="gridjs-td">$3997</td>
-                      </tr>
-                      <tr class="gridjs-tr">
-                        <td data-column-id="date" class="gridjs-td">
-                          27-10-2022 09:55
-                        </td>
-                        <td data-column-id="name" class="gridjs-td">afshin</td>
-                        <td data-column-id="email" class="gridjs-td">
-                          afshin@example.com
-                        </td>
-                        <td data-column-id="id" class="gridjs-td">#12016</td>
-                        <td data-column-id="price" class="gridjs-td">$1449</td>
-                        <td data-column-id="quantity" class="gridjs-td">1</td>
-                        <td data-column-id="total" class="gridjs-td">$1449</td>
+                    <tbody>
+                      <tr *ngFor="let command of commands">
+                        <td>{{ command.id }}</td>
+                        <td>{{ command.dateCommande | date:'dd/MM/yyyy HH:mm'}}</td>
+                        <td style="word-wrap: break-word;">{{ command.etat }}</td>
+                        <td>{{ command.total }}</td>
+                        <td>{{ command.clientId }}</td>
+                        <td><button [routerLink]="'/details/' + command.id" class="btn btn-sm btn-primary btn-wave waves-effect waves-light">
+                          <i class="ri-details-2-line align-middle me-2 d-inline-block"></i>Détails
+                        </button></td>
                       </tr>
                     </tbody>
                   </table>
