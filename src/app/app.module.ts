@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { VendeurModule } from './vendeur/vendeur.module';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { ElementsModule } from './elements/elements.module';
 import { ProductsComponent } from './elements/products/products.component';
+import { NgClass } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,7 @@ import { ProductsComponent } from './elements/products/products.component';
     SharedModule,
     VendeurModule,
     FormsModule,
-    RouterModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent],
