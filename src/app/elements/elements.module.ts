@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RetoursComponent } from './retours/retours.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-import { AppRoutingModule } from '../app-routing.module';
 import { CommandsComponent } from './commands/commands.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommandDetailsComponent } from './command-details/command-details.component';
@@ -25,4 +24,4 @@ import { CommandDetailsComponent } from './command-details/command-details.compo
   exports:[
   ]
 })
-export class ElementsModule { }
+export class ElementsModule {}

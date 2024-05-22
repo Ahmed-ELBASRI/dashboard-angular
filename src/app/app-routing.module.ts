@@ -7,7 +7,7 @@ import { PlansComponent } from './membership/plans/plans.component';
 import { PaiementComponent } from './membership/paiement/paiement.component';
 import { CommandDetailsComponent } from './elements/command-details/command-details.component';
 
-const routes: Routes = [ 
+const routes: Routes = [
   { path: 'editprofile', component: EditprofileComponent },
   { path: 'Commands' , component: CommandsComponent },
   { path: 'plans' , component: PlansComponent },
@@ -18,6 +18,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
