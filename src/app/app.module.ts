@@ -5,9 +5,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { VendeurModule } from './vendeur/vendeur.module';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+
 import { ElementsModule } from './elements/elements.module';
-import { ProductsComponent } from './elements/products/products.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,8 +15,8 @@ import { ProductsComponent } from './elements/products/products.component';
     AppRoutingModule,
     SharedModule,
     VendeurModule,
-    FormsModule,
     RouterModule,
+    ElementsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

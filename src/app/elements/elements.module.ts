@@ -6,22 +6,25 @@ import { SharedModule } from '../shared/shared.module';
 import { CommandsComponent } from './commands/commands.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommandDetailsComponent } from './command-details/command-details.component';
-
-
+import { ProductsComponent } from './products/products.component';
+import { FormsModule } from '@angular/forms';
+import { AttProductsComponent } from './attproducts/attproducts.component';
 
 @NgModule({
   declarations: [
     RetoursComponent,
     CommandsComponent,
-    CommandDetailsComponent
+    CommandDetailsComponent,
+    ProductsComponent,
+    AttProductsComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
-  exports:[
-  ]
+  exports: [],
 })
 export class ElementsModule {}

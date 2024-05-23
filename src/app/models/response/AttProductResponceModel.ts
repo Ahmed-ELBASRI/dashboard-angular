@@ -1,5 +1,6 @@
 export interface AttProductResponseDto {
+  id: number;
   cle: string;
   valeur: string;
-  productId: number;
+  product: string;
 }
