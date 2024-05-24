@@ -13,6 +13,7 @@ import { VariantesComponent } from './variantes/variantes.component';
 import { VarianteComponent } from './variantes/variante/variante.component';
 import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component';
 
+
 @NgModule({
   declarations: [
     AppComponent, 

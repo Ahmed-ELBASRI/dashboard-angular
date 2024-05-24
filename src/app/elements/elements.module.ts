@@ -10,7 +10,6 @@ import { GrapheComponent } from './bilan/graphe/graphe.component';
 import { RecentCustComponent } from './bilan/recent-cust/recent-cust.component';
 import { SalesActivityComponent } from './bilan/sales-activity/sales-activity.component';
 import { RecentOrderComponent } from './bilan/recent-order/recent-order.component';
-import { CommandsComponent } from './commands/commands.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommandDetailsComponent } from './command-details/command-details.component';
 import { FormsModule } from '@angular/forms';
@@ -29,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     GrapheComponent,
           RecentCustComponent,
           SalesActivityComponent,
-          RecentOrderComponent
+          RecentOrderComponent,
 
     RetoursComponent,
     CommandsComponent,

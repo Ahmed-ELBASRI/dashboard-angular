@@ -12,7 +12,6 @@ import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component'
 
 
 const routes: Routes = [
-  
   { path: 'editprofile', component: EditprofileComponent },
   { path: 'Commands' , component: CommandsComponent },
 
@@ -24,8 +23,6 @@ const routes: Routes = [
   { path: 'details/:id', component: CommandDetailsComponent },
   { path: 'variante', component: VarianteComponent },
   { path: 'listvendeur', component: ListvendeurComponent }
-
-
 ];
 
 @NgModule({
