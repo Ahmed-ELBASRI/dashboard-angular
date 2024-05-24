@@ -4,18 +4,27 @@ import { EditprofileComponent } from './vendeur/editprofile/editprofile.componen
 import { RetoursComponent } from './elements/retours/retours.component';
 import { CommandsComponent } from './elements/commands/commands.component';
 import { BilanComponent } from './elements/bilan/bilan.component';
+import { PlansComponent } from './membership/plans/plans.component';
+import { PaiementComponent } from './membership/paiement/paiement.component';
+import { CommandDetailsComponent } from './elements/command-details/command-details.component';
 
-const routes: Routes = [ 
+
+const routes: Routes = [
   { path: 'editprofile', component: EditprofileComponent },
   { path: 'Commands' , component: CommandsComponent },
+
   { path: 'retours' , component: RetoursComponent },
   { path: 'bilan' , component: BilanComponent }
 
+=======
+  { path: 'plans' , component: PlansComponent },
+  { path: 'paiement' , component: PaiementComponent  },
+  { path: 'details/:id', component: CommandDetailsComponent }
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

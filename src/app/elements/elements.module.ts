@@ -10,11 +10,17 @@ import { GrapheComponent } from './bilan/graphe/graphe.component';
 import { RecentCustComponent } from './bilan/recent-cust/recent-cust.component';
 import { SalesActivityComponent } from './bilan/sales-activity/sales-activity.component';
 import { RecentOrderComponent } from './bilan/recent-order/recent-order.component';
+import { CommandsComponent } from './commands/commands.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommandDetailsComponent } from './command-details/command-details.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
 @NgModule({
   declarations: [
+
    
     RetoursComponent,
     CommandsComponent,
@@ -24,13 +30,19 @@ import { RecentOrderComponent } from './bilan/recent-order/recent-order.componen
           RecentCustComponent,
           SalesActivityComponent,
           RecentOrderComponent
+
+    RetoursComponent,
+    CommandsComponent,
+    CommandDetailsComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
+    FormsModule
   ],
   exports:[
   ]
 })
-export class ElementsModule { }
+export class ElementsModule {}
