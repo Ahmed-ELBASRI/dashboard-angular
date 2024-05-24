@@ -1,0 +1,452 @@
+<div class="main-content app-content">
+  <div class="container-fluid">
+    <div
+      class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb"
+    >
+      <div class="my-auto">
+        <h5 class="page-title fs-21 mb-1">Liste des vendeurs</h5>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-xl-12">
+        <div class="card custom-card">
+          <div class="card-header">
+            <div class="card-title">Basic Datatable</div>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <div
+                id="datatable-basic_wrapper"
+                class="dataTables_wrapper dt-bootstrap5 no-footer"
+              >
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_length" id="datatable-basic_length">
+                      <label
+                        >Show
+                        <select
+                          name="datatable-basic_length"
+                          aria-controls="datatable-basic"
+                          class="form-select form-select-sm"
+                        >
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                        </select>
+                        entries</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div id="datatable-basic_filter" class="dataTables_filter">
+                      <label
+                        ><input
+                          type="search"
+                          class="form-control form-control-sm"
+                          placeholder="Search..."
+                          aria-controls="datatable-basic"
+                      /></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <table
+                      id="datatable-basic"
+                      class="table table-bordered text-nowrap w-100 dataTable no-footer"
+                      aria-describedby="datatable-basic_info"
+                    >
+                      <thead>
+                        <tr>
+                          <th
+                            class="sorting sorting_asc"
+                            tabindex="0"
+                            aria-controls="datatable-basic"
+                            rowspan="1"
+                            colspan="1"
+                            aria-sort="ascending"
+                            aria-label="Name: activate to sort column descending"
+                            style="width: 271.578px"
+                          >
+                            Nom
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable-basic"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Prenom: activate to sort column ascending"
+                            style="width: 419.969px"
+                          >
+                            Prenom
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable-basic"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Date de naissance: activate to sort column ascending"
+                            style="width: 204.969px"
+                          >
+                            Date de naissance
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable-basic"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Email: activate to sort column ascending"
+                            style="width: 98.1562px"
+                          >
+                            Email
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable-basic"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Numero de telephone: activate to sort column ascending"
+                            style="width: 205.172px"
+                          >
+                            Numero de telephone
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable-basic"
+                            rowspan="1"
+                            colspan="1"
+                            aria-label="Validation: activate to sort column ascending"
+                            style="width: 163.156px"
+                          >
+                            Validation
+                          </th>
+                          <th
+                          class="sorting"
+                          tabindex="0"
+                          aria-controls="datatable-basic"
+                          rowspan="1"
+                          colspan="1"
+                          aria-label="Actions: activate to sort column ascending"
+                          style="width: 163.156px"
+                        >
+                          Actions
+                        </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="odd">
+                          <td class="sorting_1">Airi Satou</td>
+                          <td>Accountant</td>
+                          <td>Tokyo</td>
+                          <td>33</td>
+                          <td>2008-11-28</td>
+                          <td>$162,700</td>
+                          <td><button type="button" class="btn btn-link btn-wave waves-effect waves-light">Paiements</button></td>
+                        </tr>
+                        <tr class="even">
+                          <td class="sorting_1">Angelica Ramos</td>
+                          <td>Chief Executive Officer (CEO)</td>
+                          <td>London</td>
+                          <td>47</td>
+                          <td>2009-10-09</td>
+                          <td>$1,200,000</td>
+                          <td><button type="button" class="btn btn-link btn-wave waves-effect waves-light">Paiements</button></td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="sorting_1">Ashton Cox</td>
+                          <td>Junior Technical Author</td>
+                          <td>San Francisco</td>
+                          <td>66</td>
+                          <td>2009-01-12</td>
+                          <td>$86,000</td>
+                          <td><button type="button" class="btn btn-link btn-wave waves-effect waves-light">Paiements</button></td>
+                        </tr>
+                        <tr class="even">
+                          <td class="sorting_1">Bradley Greer</td>
+                          <td>Software Engineer</td>
+                          <td>London</td>
+                          <td>41</td>
+                          <td>2012-10-13</td>
+                          <td>$132,000</td>
+                          <td><button type="button" class="btn btn-link btn-wave waves-effect waves-light">Paiements</button></td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="sorting_1">Brenden Wagner</td>
+                          <td>Software Engineer</td>
+                          <td>San Francisco</td>
+                          <td>28</td>
+                          <td>2011-06-07</td>
+                          <td>$206,850</td>
+                          <td><button type="button" class="btn btn-link btn-wave waves-effect waves-light">Paiements</button></td>
+                        </tr>
+                        <tr class="even">
+                          <td class="sorting_1">Brielle Williamson</td>
+                          <td>Integration Specialist</td>
+                          <td>New York</td>
+                          <td>61</td>
+                          <td>2012-12-02</td>
+                          <td>$372,000</td>
+                          <td><button type="button" class="btn btn-link btn-wave waves-effect waves-light">Paiements</button></td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="sorting_1">Bruno Nash</td>
+                          <td>Software Engineer</td>
+                          <td>London</td>
+                          <td>38</td>
+                          <td>2011-05-03</td>
+                          <td>$163,500</td>
+                          <td><button type="button" class="btn btn-link btn-wave waves-effect waves-light">Paiements</button></td>
+                        </tr>
+                        <tr class="even">
+                          <td class="sorting_1">Caesar Vance</td>
+                          <td>Pre-Sales Support</td>
+                          <td>New York</td>
+                          <td>21</td>
+                          <td>2011-12-12</td>
+                          <td>$106,450</td>
+                          <td><button type="button" class="btn btn-link btn-wave waves-effect waves-light">Paiements</button></td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="sorting_1">Cara Stevens</td>
+                          <td>Sales Assistant</td>
+                          <td>New York</td>
+                          <td>46</td>
+                          <td>2011-12-06</td>
+                          <td>$145,600</td>
+                          <td><button type="button" class="btn btn-link btn-wave waves-effect waves-light">Paiements</button></td>
+                          
+                        </tr>
+                        <tr class="even">
+                          <td class="sorting_1">Cedric Kelly</td>
+                          <td>Senior Javascript Developer</td>
+                          <td>Edinburgh</td>
+                          <td>22</td>
+                          <td>2012-03-29</td>
+                          <td>$433,060</td>
+                          <td><button type="button" class="btn btn-link btn-wave waves-effect waves-light">Paiements</button></td>
+                        </tr>
+                        <tr class="even">
+                            <td class="sorting_1">Cedric Kelly</td>
+                            <td>Senior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2012-03-29</td>
+                            <td>$433,060</td>
+                            <td><button type="button" class="btn btn-link btn-wave waves-effect waves-light">Paiements</button></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-5">
+                    <div
+                      class="dataTables_info"
+                      id="datatable-basic_info"
+                      role="status"
+                      aria-live="polite"
+                    >
+                      Showing 1 to 10 of 57 entries
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-7">
+                    <div
+                      class="dataTables_paginate paging_simple_numbers"
+                      id="datatable-basic_paginate"
+                    >
+                      <ul class="pagination">
+                        <li
+                          class="paginate_button page-item previous disabled"
+                          id="datatable-basic_previous"
+                        >
+                          <a
+                            href="#"
+                            aria-controls="datatable-basic"
+                            data-dt-idx="0"
+                            tabindex="0"
+                            class="page-link"
+                            >Previous</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item active">
+                          <a
+                            href="#"
+                            aria-controls="datatable-basic"
+                            data-dt-idx="1"
+                            tabindex="0"
+                            class="page-link"
+                            >1</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item">
+                          <a
+                            href="#"
+                            aria-controls="datatable-basic"
+                            data-dt-idx="2"
+                            tabindex="0"
+                            class="page-link"
+                            >2</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item">
+                          <a
+                            href="#"
+                            aria-controls="datatable-basic"
+                            data-dt-idx="3"
+                            tabindex="0"
+                            class="page-link"
+                            >3</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item">
+                          <a
+                            href="#"
+                            aria-controls="datatable-basic"
+                            data-dt-idx="4"
+                            tabindex="0"
+                            class="page-link"
+                            >4</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item">
+                          <a
+                            href="#"
+                            aria-controls="datatable-basic"
+                            data-dt-idx="5"
+                            tabindex="0"
+                            class="page-link"
+                            >5</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item">
+                          <a
+                            href="#"
+                            aria-controls="datatable-basic"
+                            data-dt-idx="6"
+                            tabindex="0"
+                            class="page-link"
+                            >6</a
+                          >
+                        </li>
+                        <li
+                          class="paginate_button page-item next"
+                          id="datatable-basic_next"
+                        >
+                          <a
+                            href="#"
+                            aria-controls="datatable-basic"
+                            data-dt-idx="7"
+                            tabindex="0"
+                            class="page-link"
+                            >Next</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card custom-card">
+                <div class="card-header">
+                    <div class="card-title">
+                        Responsive Datatable
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="responsiveDataTable_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="responsiveDataTable_length"><label>Show <select name="responsiveDataTable_length" aria-controls="responsiveDataTable" class="form-select form-select-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="responsiveDataTable_filter" class="dataTables_filter"><label><input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="responsiveDataTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="responsiveDataTable" class="table table-bordered text-nowrap w-100 dataTable no-footer dtr-inline" aria-describedby="responsiveDataTable_info" style="width: 1601px;">
+                        <thead>
+                            <tr><th class="sorting" tabindex="0" aria-controls="responsiveDataTable" rowspan="1" colspan="1" style="width: 182px;" aria-label="First name: activate to sort column ascending">First name</th><th class="sorting" tabindex="0" aria-controls="responsiveDataTable" rowspan="1" colspan="1" style="width: 174px;" aria-label="Last name: activate to sort column ascending">Last name</th><th class="sorting sorting_desc" tabindex="0" aria-controls="responsiveDataTable" rowspan="1" colspan="1" style="width: 345px;" aria-label="Position: activate to sort column ascending" aria-sort="descending">Position</th><th class="sorting" tabindex="0" aria-controls="responsiveDataTable" rowspan="1" colspan="1" style="width: 180px;" aria-label="Start date: activate to sort column ascending">Start date</th><th class="sorting" tabindex="0" aria-controls="responsiveDataTable" rowspan="1" colspan="1" style="width: 142px;" aria-label="Salary: activate to sort column ascending">Salary</th><th class="sorting" tabindex="0" aria-controls="responsiveDataTable" rowspan="1" colspan="1" style="width: 343px;" aria-label="E-mail: activate to sort column ascending">E-mail</th></tr>
+                        </thead>
+                        <tbody>
+  
+                        <tr class="odd">
+                                <td class="dtr-control" tabindex="0">Connor</td>
+                                <td>Johne</td>
+                                <td class="sorting_1">Web Developer</td>
+                                <td>2011/1/25</td>
+                                <td>$92,575</td>
+                                <td>C.johne@datatables.net</td>
+                            </tr><tr class="even">
+                                <td class="dtr-control" tabindex="0">Harry</td>
+                                <td>Carr</td>
+                                <td class="sorting_1">Technical Manager</td>
+                                <td>20011/02/87</td>
+                                <td>$86,000</td>
+                                <td>h.carr@datatables.net</td>
+                            </tr><tr class="odd">
+                                <td class="dtr-control">Prescott</td>
+                                <td>Bartlett</td>
+                                <td class="sorting_1">Technical Author</td>
+                                <td>2014/12/25</td>
+                                <td>$789,100</td>
+                                <td>p.bartlett@datatables.net</td>
+                            </tr><tr class="even">
+                                <td class="dtr-control">Gavin</td>
+                                <td>Cortez</td>
+                                <td class="sorting_1">Team Leader</td>
+                                <td>2015/1/19</td>
+                                <td>$345,890</td>
+                                <td>g.cortez@datatables.net</td>
+                            </tr><tr class="odd">
+                                <td class="dtr-control">Trevor</td>
+                                <td>Ross</td>
+                                <td class="sorting_1">Systems Administrator</td>
+                                <td>2011/05/23</td>
+                                <td>$237,500</td>
+                                <td>t.ross@datatables.net</td>
+                            </tr><tr class="even">
+                                <td class="dtr-control" tabindex="0">Bella</td>
+                                <td>Chloe</td>
+                                <td class="sorting_1">System Developer</td>
+                                <td>2018/03/12</td>
+                                <td>$654,765</td>
+                                <td>b.Chloe@datatables.net</td>
+                            </tr><tr class="odd">
+                                <td class="dtr-control">Lisa</td>
+                                <td>Smith</td>
+                                <td class="sorting_1">Support Lead</td>
+                                <td>2011/05/21</td>
+                                <td>$342,000</td>
+                                <td>l.simth@datatables.net</td>
+                            </tr><tr class="even">
+                                <td class="dtr-control">Finn</td>
+                                <td>Camacho</td>
+                                <td class="sorting_1">Support Engineer</td>
+                                <td>2016/07/07</td>
+                                <td>$87,500</td>
+                                <td>f.camacho@datatables.net</td>
+                            </tr><tr class="odd">
+                                <td class="dtr-control">Olivia</td>
+                                <td>Liang</td>
+                                <td class="sorting_1">Support Engineer</td>
+                                <td>2014/02/03</td>
+                                <td>$234,500</td>
+                                <td>o.liang@datatables.net</td>
+                            </tr><tr class="even">
+                                <td class="dtr-control">Sakura</td>
+                                <td>Yamamoto</td>
+                                <td class="sorting_1">Support Engineer</td>
+                                <td>2010/08/19</td>
+                                <td>$139,575</td>
+                                <td>s.yamamoto@datatables.net</td>
+                            </tr></tbody>
+                    </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="responsiveDataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 50 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="responsiveDataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="responsiveDataTable_previous"><a href="#" aria-controls="responsiveDataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="responsiveDataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="responsiveDataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="responsiveDataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="responsiveDataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="responsiveDataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item next" id="responsiveDataTable_next"><a href="#" aria-controls="responsiveDataTable" data-dt-idx="6" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

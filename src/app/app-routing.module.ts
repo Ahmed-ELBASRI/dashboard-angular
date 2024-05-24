@@ -6,13 +6,19 @@ import { CommandsComponent } from './elements/commands/commands.component';
 import { PlansComponent } from './membership/plans/plans.component';
 import { PaiementComponent } from './membership/paiement/paiement.component';
 import { CommandDetailsComponent } from './elements/command-details/command-details.component';
+import { VarianteComponent } from './variantes/variante/variante.component';
+import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component';
 
 const routes: Routes = [
+  
   { path: 'editprofile', component: EditprofileComponent },
   { path: 'Commands' , component: CommandsComponent },
   { path: 'plans' , component: PlansComponent },
   { path: 'paiement' , component: PaiementComponent  },
-  { path: 'details/:id', component: CommandDetailsComponent }
+  { path: 'details/:id', component: CommandDetailsComponent },
+  { path: 'variante', component: VarianteComponent },
+  { path: 'listvendeur', component: ListvendeurComponent }
+
 
 ];
 

@@ -9,16 +9,25 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { ElementsModule } from './elements/elements.module';
 import { ProductsComponent } from './elements/products/products.component';
 import { NgClass } from '@angular/common';
+import { VariantesComponent } from './variantes/variantes.component';
+import { VarianteComponent } from './variantes/variante/variante.component';
+import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent, 
+    VariantesComponent, 
+    VarianteComponent, 
+    ListvendeurComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     VendeurModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    VendeurModule
   ],
   providers: [],
   bootstrap: [AppComponent],
