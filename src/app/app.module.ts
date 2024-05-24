@@ -8,18 +8,20 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, NgModel } from '@angular/forms';
 import { ElementsModule } from './elements/elements.module';
 import { ProductsComponent } from './elements/products/products.component';
-import { NgClass } from '@angular/common';
+import {CommonModule, NgClass} from '@angular/common';
 import { VariantesComponent } from './variantes/variantes.component';
 import { VarianteComponent } from './variantes/variante/variante.component';
 import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component';
+import {VendeurpaiementComponent} from "./admin/vendeurpaiement/vendeurpaiement.component";
 
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    VariantesComponent, 
-    VarianteComponent, 
-    ListvendeurComponent
+    AppComponent,
+    VariantesComponent,
+    VarianteComponent,
+    ListvendeurComponent,
+    VendeurpaiementComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component'
     VendeurModule,
     FormsModule,
     RouterModule,
-    VendeurModule
+    VendeurModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

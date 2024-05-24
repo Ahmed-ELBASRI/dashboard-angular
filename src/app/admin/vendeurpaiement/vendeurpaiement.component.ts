@@ -8,14 +8,16 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./vendeurpaiement.component.css']
 })
 export class VendeurpaiementComponent implements OnInit {
-  paiements: any[] = [];
+  paiements: { id_paiement: number, datepaiement: string, paymentMethod: string }[] = [];
+
 
   constructor(
     private route: ActivatedRoute,
     private vendeurPaiementService: VendeurPaiementService
   ) { }
-  
+
   ngOnInit(): void {
+
   const vendeurIdString = this.route.snapshot.paramMap.get('id');
   if (vendeurIdString !== null) {
     const vendeurId = parseInt(vendeurIdString, 10); // Convertir la chaîne en nombre
@@ -33,7 +35,8 @@ getPaiements(vendeurId: number): void {
   // Utiliser vendeurId dans votre service
   this.vendeurPaiementService.getPaiementsByVendeurId(vendeurId).subscribe(
     (data) => {
-      this.paiements = data;
+     this.paiements = data;
+      console.log(this.paiements);
       console.log(data);
       console.log("getPaiements");
     },
@@ -42,5 +45,5 @@ getPaiements(vendeurId: number): void {
     }
   );
 }
- 
+
 }
