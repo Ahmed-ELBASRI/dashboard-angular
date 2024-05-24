@@ -23,9 +23,6 @@ const routes: Routes = [
   { path: 'variante', component: VarianteComponent },
   { path: 'listvendeur', component: ListvendeurComponent },
   { path: 'vendeurpaiement/:id', component: VendeurpaiementComponent}
-  
-
-
 ];
 
 @NgModule({
