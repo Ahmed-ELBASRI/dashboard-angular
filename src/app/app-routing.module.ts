@@ -9,6 +9,7 @@ import { PaiementComponent } from './membership/paiement/paiement.component';
 import { CommandDetailsComponent } from './elements/command-details/command-details.component';
 import { VarianteComponent } from './variantes/variante/variante.component';
 import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component';
+import { VendeurpaiementComponent } from './admin/vendeurpaiement/vendeurpaiement.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'paiement' , component: PaiementComponent  },
   { path: 'details/:id', component: CommandDetailsComponent },
   { path: 'variante', component: VarianteComponent },
-  { path: 'listvendeur', component: ListvendeurComponent }
+  { path: 'listvendeur', component: ListvendeurComponent },
+  { path: 'vendeurpaiement/:id', component: VendeurpaiementComponent}
   
 
 
