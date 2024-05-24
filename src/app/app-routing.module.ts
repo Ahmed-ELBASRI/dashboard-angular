@@ -17,9 +17,8 @@ const routes: Routes = [
   { path: 'Commands' , component: CommandsComponent },
 
   { path: 'retours' , component: RetoursComponent },
-  { path: 'bilan' , component: BilanComponent }
+  { path: 'bilan' , component: BilanComponent },
 
-=======
   { path: 'plans' , component: PlansComponent },
   { path: 'paiement' , component: PaiementComponent  },
   { path: 'details/:id', component: CommandDetailsComponent },
