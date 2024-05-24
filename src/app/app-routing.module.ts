@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'details/:id', component: CommandDetailsComponent },
   { path: 'variante', component: VarianteComponent },
   { path: 'listvendeur', component: ListvendeurComponent }
+  
 
 
 ];
