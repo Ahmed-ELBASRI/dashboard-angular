@@ -8,8 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./vendeurpaiement.component.css']
 })
 export class VendeurpaiementComponent implements OnInit {
-  paiements: { id_paiement: number, datepaiement: string, paymentMethod: string }[] = [];
-
+  paiements: { id_paiement: number, datepaiement: string, paymentMethod: string, planPaiementLibelle: string }[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -17,33 +16,27 @@ export class VendeurpaiementComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-  const vendeurIdString = this.route.snapshot.paramMap.get('id');
-  if (vendeurIdString !== null) {
-    const vendeurId = parseInt(vendeurIdString, 10); // Convertir la chaîne en nombre
-    if (!isNaN(vendeurId)) {
-      this.getPaiements(vendeurId);
+    const vendeurIdString = this.route.snapshot.paramMap.get('id');
+    if (vendeurIdString !== null) {
+      const vendeurId = parseInt(vendeurIdString, 10); // Convertir la chaîne en nombre
+      if (!isNaN(vendeurId)) {
+        this.getPaiements(vendeurId);
+      } else {
+        console.error('L\'ID du vendeur n\'est pas un nombre valide');
+      }
     } else {
-      console.error('L\'ID du vendeur n\'est pas un nombre valide');
+      console.error('ID du vendeur non trouvé dans les paramètres de l\'URL');
     }
-  } else {
-    console.error('ID du vendeur non trouvé dans les paramètres de l\'URL');
   }
-}
 
-getPaiements(vendeurId: number): void {
-  // Utiliser vendeurId dans votre service
-  this.vendeurPaiementService.getPaiementsByVendeurId(vendeurId).subscribe(
-    (data) => {
-     this.paiements = data;
-      console.log(this.paiements);
-      console.log(data);
-      console.log("getPaiements");
-    },
-    (error) => {
-      console.error('Erreur lors de la récupération des paiements:', error);
-    }
-  );
-}
-
+  getPaiements(vendeurId: number): void {
+    this.vendeurPaiementService.getPaiementsByVendeurId(vendeurId).subscribe(
+      (data) => {
+        this.paiements = data;
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération des paiements:', error);
+      }
+    );
+  }
 }

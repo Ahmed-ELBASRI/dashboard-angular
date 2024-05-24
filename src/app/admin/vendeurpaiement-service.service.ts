@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class VendeurPaiementService {
     private apiUrl = 'https://localhost:7100/api/Paiement';
+    private planPaiementUrl = 'https://localhost:7100/api/PlanPaiement';
 
     constructor(private http: HttpClient) { }
   
@@ -14,4 +15,8 @@ export class VendeurPaiementService {
       const url = `${this.apiUrl}/vendeur/${vendeurId}`;
       return this.http.get<any[]>(url);
     }
+    getPlanPaiementById(planPaiementId: number): Observable<any> {
+        const url = `${this.planPaiementUrl}/${planPaiementId}`;
+        return this.http.get<any>(url);
+      }
 }
