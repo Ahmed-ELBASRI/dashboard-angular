@@ -23,8 +23,8 @@ export class AttPoductServiceService {
     return this.http.post<any>(`${this.baseUrl}`, attproduct);
   }
 
-  deleteProduct(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}/products/${id}`);
+  deleteProduct(id: Number): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/${id}`);
   }
 
   updateProduct(
