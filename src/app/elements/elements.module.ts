@@ -12,9 +12,9 @@ import { SalesActivityComponent } from './bilan/sales-activity/sales-activity.co
 import { RecentOrderComponent } from './bilan/recent-order/recent-order.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommandDetailsComponent } from './command-details/command-details.component';
+import { ProductsComponent } from './products/products.component';
 import { FormsModule } from '@angular/forms';
-
-
+import { AttProductsComponent } from './attproducts/attproducts.component';
 
 
 @NgModule({
@@ -32,16 +32,17 @@ import { FormsModule } from '@angular/forms';
 
     RetoursComponent,
     CommandsComponent,
-    CommandDetailsComponent
+    CommandDetailsComponent,
+    ProductsComponent,
+    AttProductsComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     SharedModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
-  exports:[
-  ]
+  exports: [],
 })
 export class ElementsModule {}

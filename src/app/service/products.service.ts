@@ -20,17 +20,11 @@ export class ProductServiceService {
     return this.http.delete<void>(url);
   }
 
-  createProduct(
-    productRequestDto: ProductRequestDto
-  ): Observable<ProductResponseDto> {
-    return this.http.post<ProductResponseDto>(this.baseUrl, productRequestDto);
+  createProduct(product: FormData): Observable<ProductResponseDto> {
+    return this.http.post<ProductResponseDto>(this.baseUrl, product);
   }
 
-  updateProduct(
-    id: number,
-    productRequestDto: ProductRequestDto
-  ): Observable<ProductResponseDto> {
-    const url = `${this.baseUrl}/${id}`;
-    return this.http.put<ProductResponseDto>(url, productRequestDto);
+  updateProduct(id: number, product: FormData): Observable<ProductResponseDto> {
+    return this.http.put<ProductResponseDto>(`${this.baseUrl}/${id}`, product);
   }
 }
