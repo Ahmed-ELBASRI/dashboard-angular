@@ -7,16 +7,31 @@ import { VendeurModule } from './vendeur/vendeur.module';
 import { RouterModule } from '@angular/router';
 
 import { ElementsModule } from './elements/elements.module';
+import { ProductsComponent } from './elements/products/products.component';
+import {CommonModule, NgClass} from '@angular/common';
+import { VariantesComponent } from './variantes/variantes.component';
+import { VarianteComponent } from './variantes/variante/variante.component';
+import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component';
+import {VendeurpaiementComponent} from "./admin/vendeurpaiement/vendeurpaiement.component";
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    VariantesComponent,
+    VarianteComponent,
+    ListvendeurComponent,
+    VendeurpaiementComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     VendeurModule,
+    FormsModule,
     RouterModule,
-    ElementsModule,
+    VendeurModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
