@@ -118,45 +118,7 @@
                 </div>
                 <div class="gridjs-footer">
                   <div class="gridjs-pagination">
-                    <div
-                      role="status"
-                      aria-live="polite"
-                      class="gridjs-summary"
-                      title="Page 1 of 1"
-                    >
-                      Showing <b>1</b> to <b>5</b> of <b>5</b> results
-                    </div>
-                    <div class="gridjs-pages">
-                      <button
-                        tabindex="0"
-                        role="button"
-                        disabled=""
-                        title="Previous"
-                        aria-label="Previous"
-                        class=""
-                      >
-                        Previous
-                      </button>
-                      <button
-                        tabindex="0"
-                        role="button"
-                        class="gridjs-currentPage"
-                        title="Page 1"
-                        aria-label="Page 1"
-                      >
-                        1
-                      </button>
-                      <button
-                        tabindex="0"
-                        role="button"
-                        disabled=""
-                        title="Next"
-                        aria-label="Next"
-                        class=""
-                      >
-                        Next
-                      </button>
-                    </div>
+                    <div class="gridjs-pages"></div>
                   </div>
                 </div>
                 <div id="gridjs-temp" class="gridjs-temp"></div>
@@ -166,258 +128,255 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Add Modal -->
-<div
-  class="modal fade"
-  [ngClass]="{ 'show d-block': isAddModalVisible }"
-  id="addProductModal"
-  tabindex="-1"
-  aria-labelledby="addProductModalLabel"
-  aria-hidden="true"
-  style="background-color: rgba(0, 0, 0, 0.5)"
-  *ngIf="isAddModalVisible"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
-        <button
-          type="button"
-          class="btn-close"
-          (click)="closeAddModal()"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="product-name" class="col-form-label">Name:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="product-name"
-              [(ngModel)]="newProduct.name"
-              name="name"
-              required
-            />
+    <!-- Add Product Modal -->
+    <div
+      class="modal fade"
+      [ngClass]="{ 'show d-block': isAddModalVisible }"
+      id="addProductModal"
+      tabindex="-1"
+      aria-labelledby="addProductModalLabel"
+      aria-hidden="true"
+      style="background-color: rgba(0, 0, 0, 0.5)"
+      *ngIf="isAddModalVisible"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addProductModalLabel">
+              Add New Product
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              (click)="closeAddModal()"
+              aria-label="Close"
+            ></button>
           </div>
-          <div class="mb-3">
-            <label for="product-description" class="col-form-label"
-              >Description:</label
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  [(ngModel)]="newProduct.name"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                  class="form-control"
+                  id="description"
+                  [(ngModel)]="newProduct.description"
+                  name="description"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="qteStock" class="form-label">QteStock</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="qteStock"
+                  [(ngModel)]="newProduct.qteStock"
+                  name="qteStock"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="prix" class="form-label">Prix</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="prix"
+                  [(ngModel)]="newProduct.prix"
+                  name="prix"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="image" class="form-label">Product Image</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="image"
+                  (change)="onFileSelected($event)"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="closeAddModal()"
             >
-            <textarea
-              class="form-control"
-              id="product-description"
-              [(ngModel)]="newProduct.description"
-              name="description"
-              required
-            ></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="product-qteStock" class="col-form-label"
-              >QteStock:</label
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="saveNewProduct()"
             >
-            <input
-              type="number"
-              class="form-control"
-              id="product-qteStock"
-              [(ngModel)]="newProduct.qteStock"
-              name="qteStock"
-              required
-            />
+              Save
+            </button>
           </div>
-          <div class="mb-3">
-            <label for="product-prix" class="col-form-label">Prix:</label>
-            <input
-              type="number"
-              class="form-control"
-              id="product-prix"
-              [(ngModel)]="newProduct.prix"
-              name="prix"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="product-image" class="col-form-label">Image URL:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="product-image"
-              [(ngModel)]="newProduct.image"
-              name="image"
-              required
-            />
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="closeAddModal()"
-        >
-          Close
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          (click)="saveNewProduct()"
-        >
-          Save Product
-        </button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Update Modal -->
-<div
-  class="modal fade"
-  [ngClass]="{ 'show d-block': isUpdateModalVisible }"
-  id="updateProductModal"
-  tabindex="-1"
-  aria-labelledby="updateProductModalLabel"
-  aria-hidden="true"
-  style="background-color: rgba(0, 0, 0, 0.5)"
-  *ngIf="isUpdateModalVisible"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="updateProductModalLabel">Update Product</h5>
-        <button
-          type="button"
-          class="btn-close"
-          (click)="closeUpdateModal()"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="update-product-name" class="col-form-label"
-              >Name:</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="update-product-name"
-              [(ngModel)]="productToUpdate.name"
-              name="name"
-              required
-            />
+    <!-- Update Product Modal -->
+    <div
+      class="modal fade"
+      [ngClass]="{ 'show d-block': isUpdateModalVisible }"
+      id="updateProductModal"
+      tabindex="-1"
+      aria-labelledby="updateProductModalLabel"
+      aria-hidden="true"
+      style="background-color: rgba(0, 0, 0, 0.5)"
+      *ngIf="isUpdateModalVisible"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="updateProductModalLabel">
+              Update Product
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              (click)="closeUpdateModal()"
+              aria-label="Close"
+            ></button>
           </div>
-          <div class="mb-3">
-            <label for="update-product-description" class="col-form-label"
-              >Description:</label
-            >
-            <textarea
-              class="form-control"
-              id="update-product-description"
-              [(ngModel)]="productToUpdate.description"
-              name="description"
-              required
-            ></textarea>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="nameUpdate" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nameUpdate"
+                  [(ngModel)]="productToUpdate.name"
+                  name="nameUpdate"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="descriptionUpdate" class="form-label"
+                  >Description</label
+                >
+                <textarea
+                  class="form-control"
+                  id="descriptionUpdate"
+                  [(ngModel)]="productToUpdate.description"
+                  name="descriptionUpdate"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="qteStockUpdate" class="form-label">QteStock</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="qteStockUpdate"
+                  [(ngModel)]="productToUpdate.qteStock"
+                  name="qteStockUpdate"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="prixUpdate" class="form-label">Prix</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="prixUpdate"
+                  [(ngModel)]="productToUpdate.prix"
+                  name="prixUpdate"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="imageUpdate" class="form-label"
+                  >Product Image</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="imageUpdate"
+                  (change)="onFileSelected($event)"
+                />
+              </div>
+            </form>
           </div>
-          <div class="mb-3">
-            <label for="update-product-qteStock" class="col-form-label"
-              >QteStock:</label
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="closeUpdateModal()"
             >
-            <input
-              type="number"
-              class="form-control"
-              id="update-product-qteStock"
-              [(ngModel)]="productToUpdate.qteStock"
-              name="qteStock"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="update-product-prix" class="col-form-label"
-              >Prix:</label
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="saveUpdatedProduct()"
             >
-            <input
-              type="number"
-              class="form-control"
-              id="update-product-prix"
-              [(ngModel)]="productToUpdate.prix"
-              name="prix"
-              required
-            />
+              Save
+            </button>
           </div>
-          <div class="mb-3">
-            <label for="update-product-image" class="col-form-label"
-              >Image URL:</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="update-product-image"
-              [(ngModel)]="productToUpdate.image"
-              name="image"
-              required
-            />
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="closeUpdateModal()"
-        >
-          Close
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          (click)="saveUpdatedProduct()"
-        >
-          Save Changes
-        </button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- Delete Modal -->
-<div
-  class="modal fade"
-  [ngClass]="{ 'show d-block': isDeleteModalVisible }"
-  id="deleteProductModal"
-  tabindex="-1"
-  aria-labelledby="deleteProductModalLabel"
-  aria-hidden="true"
-  style="background-color: rgba(0, 0, 0, 0.5)"
-  *ngIf="isDeleteModalVisible"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteProductModalLabel">Confirm Delete</h5>
-        <button
-          type="button"
-          class="btn-close"
-          (click)="closeDeleteModal()"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure you want to delete this product?</p>
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          (click)="closeDeleteModal()"
-        >
-          Cancel
-        </button>
-        <button type="button" class="btn btn-danger" (click)="deleteProduct()">
-          Delete
-        </button>
+
+    <!-- Delete Modal -->
+    <div
+      class="modal fade"
+      [ngClass]="{ 'show d-block': isDeleteModalVisible }"
+      id="deleteProductModal"
+      tabindex="-1"
+      aria-labelledby="deleteProductModalLabel"
+      aria-hidden="true"
+      style="background-color: rgba(0, 0, 0, 0.5)"
+      *ngIf="isDeleteModalVisible"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteProductModalLabel">
+              Delete Product
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              (click)="closeDeleteModal()"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this product?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="closeDeleteModal()"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="deleteProduct()"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

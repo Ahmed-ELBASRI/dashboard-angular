@@ -43,9 +43,10 @@ export class AttProductsComponent implements OnInit {
     productId: 0,
     valeur: '',
   };
+
   attproductToUpdate: AttProductResponseDto = {
     id: 0,
-    product: '',
+    product: 0,
     valeur: '',
     cle: '',
   };
@@ -63,8 +64,6 @@ export class AttProductsComponent implements OnInit {
   }
 
   saveNewAttProduct() {
-    console.log(this.attProduct.productId);
-
     this.attProductservice.addProduct(this.attProduct).subscribe(
       (result: AttProductResponseDto) => {
         this.loadAttProducts();
@@ -94,8 +93,23 @@ export class AttProductsComponent implements OnInit {
   }
 
   saveUpdatedAttProduct() {
-    // Logic to save the updated attribute
-    this.closeUpdateModal();
+    this.attProductservice
+      .updateProduct(this.attproductToUpdate.id, {
+        cle: this.attproductToUpdate.cle,
+        //productId: 11,
+        productId: this.attproductToUpdate.product, // Ensure this matches your data structure
+        valeur: this.attproductToUpdate.valeur,
+      })
+      .subscribe(
+        (result) => {
+          this.loadAttProducts();
+          this.closeUpdateModal();
+        },
+        (error) => {
+          console.error('Error updating product:', error);
+          this.closeUpdateModal();
+        }
+      );
   }
 
   openDeleteModal(productId: number) {
@@ -108,7 +122,6 @@ export class AttProductsComponent implements OnInit {
   }
 
   deleteAttProduct() {
-    // Logic to delete the attribute
     if (this.idProductToDelet != 0) {
       this.attProductservice
         .deleteProduct(this.idProductToDelet)

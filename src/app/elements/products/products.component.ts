@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
     description: '',
     qteStock: 0,
     prix: 0,
-    image: '',
+    image: null,
   };
   productToUpdate: ProductResponseDto = {
     id: 0,
@@ -74,7 +74,7 @@ export class ProductsComponent implements OnInit {
       description: '',
       qteStock: 0,
       prix: 0,
-      image: '',
+      image: null,
     };
     this.isAddModalVisible = true;
   }
@@ -84,8 +84,16 @@ export class ProductsComponent implements OnInit {
   }
 
   saveNewProduct(): void {
-    console.log(this.newProduct);
-    this.service.createProduct(this.newProduct).subscribe(
+    const formData = new FormData();
+    formData.append('name', this.newProduct.name);
+    formData.append('description', this.newProduct.description);
+    formData.append('qteStock', this.newProduct.qteStock.toString());
+    formData.append('prix', this.newProduct.prix.toString());
+    if (this.newProduct.image) {
+      formData.append('file', this.newProduct.image);
+    }
+
+    this.service.createProduct(formData).subscribe(
       (result: ProductResponseDto) => {
         this.data.push(result);
         this.closeAddModal();
@@ -106,31 +114,37 @@ export class ProductsComponent implements OnInit {
     this.isUpdateModalVisible = false;
   }
 
-  saveUpdatedProduct(): void {
-    const updateRequest: ProductRequestDto = {
-      name: this.productToUpdate.name,
-      description: this.productToUpdate.description,
-      qteStock: this.productToUpdate.qteStock,
-      prix: this.productToUpdate.prix,
-      image: this.productToUpdate.image,
-    };
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length) {
+      this.newProduct.image = input.files[0];
+    }
+  }
 
-    this.service
-      .updateProduct(this.productToUpdate.id, updateRequest)
-      .subscribe(
-        (result: ProductResponseDto) => {
-          const index = this.data.findIndex(
-            (product) => product.id === result.id
-          );
-          if (index !== -1) {
-            this.data[index] = result;
-          }
-          this.closeUpdateModal();
-        },
-        (error) => {
-          console.error('Error updating product:', error);
-          this.closeUpdateModal();
+  saveUpdatedProduct(): void {
+    const formData = new FormData();
+    formData.append('name', this.productToUpdate.name);
+    formData.append('description', this.productToUpdate.description);
+    formData.append('qteStock', this.productToUpdate.qteStock.toString());
+    formData.append('prix', this.productToUpdate.prix.toString());
+    if (this.productToUpdate.image) {
+      formData.append('image', this.productToUpdate.image);
+    }
+
+    this.service.updateProduct(this.productToUpdate.id, formData).subscribe(
+      (result: ProductResponseDto) => {
+        const index = this.data.findIndex(
+          (product) => product.id === result.id
+        );
+        if (index !== -1) {
+          this.data[index] = result;
         }
-      );
+        this.closeUpdateModal();
+      },
+      (error) => {
+        console.error('Error updating product:', error);
+        this.closeUpdateModal();
+      }
+    );
   }
 }

@@ -3,5 +3,5 @@ export interface ProductRequestDto {
   description: string;
   qteStock: number;
   prix: number;
-  image: string;
+  image: File | null;
 }
