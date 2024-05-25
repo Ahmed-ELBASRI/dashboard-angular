@@ -10,6 +10,7 @@ import { CommandDetailsComponent } from './elements/command-details/command-deta
 import { VarianteComponent } from './variantes/variante/variante.component';
 import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component';
 import { VendeurpaiementComponent } from './admin/vendeurpaiement/vendeurpaiement.component';
+import { ProductsComponent } from './elements/products/products.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'details/:id', component: CommandDetailsComponent },
   { path: 'variante', component: VarianteComponent },
   { path: 'listvendeur', component: ListvendeurComponent },
-  { path: 'vendeurpaiement/:id', component: VendeurpaiementComponent}
+  { path: 'vendeurpaiement/:id', component: VendeurpaiementComponent},
+  { path: 'products', component: ProductsComponent}
 ];
 
 @NgModule({
