@@ -37,13 +37,15 @@
                           <th>ID Paiement</th>
                           <th>Date Paiement</th>
                           <th>Paiement Methode</th>
+                          <th>Plan Paiement</th>
                         </tr>
                       </thead>
                       <tbody>
                       <tr *ngFor="let paiement of paiements">
                         <td>{{ paiement.id_paiement }}</td>
-                        <td>{{ paiement.datepaiement }}</td>
+                        <td>{{ paiement.datepaiement | date:'dd/MM/yyyy HH:mm'}}</td>
                         <td>{{ paiement.paymentMethod }}</td>
+                        <td>{{ paiement.planPaiementLibelle }}</td>
                       </tr>
                       </tbody>
                     </table>
