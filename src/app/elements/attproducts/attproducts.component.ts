@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AttProductRequestModel } from 'src/app/models/request/AttProductRequestModel';
-import { ProductRequestDto } from 'src/app/models/request/ProductRequestModel';
 import { AttProductResponseDto } from 'src/app/models/response/AttProductResponceModel';
 import { ProductResponseDto } from 'src/app/models/response/ProductResponceModel';
 import { AttPoductServiceService } from 'src/app/service/att-poduct-service.service';
+import { ProductServiceService } from 'src/app/service/products.service';
 
 @Component({
   selector: 'app-att-products',
@@ -12,127 +12,123 @@ import { AttPoductServiceService } from 'src/app/service/att-poduct-service.serv
 })
 export class AttProductsComponent implements OnInit {
   data: AttProductResponseDto[] = [];
-  productIdToDelete: number | null = null;
-  isAddModalVisible: boolean = false;
-  isDeleteModalVisible: boolean = false;
-  isUpdateModalVisible: boolean = false;
+  productsdata: ProductResponseDto[] = [];
+  idProductToDelet: Number = 0;
 
-  newProduct: ProductRequestDto = {
-    name: '',
-    description: '',
-    qteStock: 0,
-    prix: 0,
-    image: '',
-  };
-  productToUpdate: ProductResponseDto = {
-    id: 0,
-    name: '',
-    description: '',
-    qteStock: 0,
-    prix: 0,
-    image: '',
-  };
-
-  constructor(private service: AttPoductServiceService) {}
+  constructor(
+    private attProductservice: AttPoductServiceService,
+    private productService: ProductServiceService
+  ) {}
 
   ngOnInit(): void {
-    this.service.getProducts().subscribe((result: AttProductResponseDto[]) => {
-      this.data = result;
-      console.log(this.data);
-    });
+    this.productService
+      .getAllProducts()
+      .subscribe((result: ProductResponseDto[]) => {
+        this.productsdata = result;
+        console.log(this.data);
+      });
+    this.loadAttProducts();
   }
 
-  openDeleteModal(productId: number): void {
-    // this.productIdToDelete = productId;
-    // this.isDeleteModalVisible = true;
+  loadAttProducts(): void {
+    this.attProductservice
+      .getProducts()
+      .subscribe((response: AttProductResponseDto[]) => {
+        this.data = response;
+      });
   }
 
-  closeDeleteModal(): void {
-    // this.isDeleteModalVisible = false;
-    // this.productIdToDelete = null;
-  }
+  attProduct: AttProductRequestModel = {
+    cle: '',
+    productId: 0,
+    valeur: '',
+  };
 
-  deleteProduct(): void {
-    // if (this.productIdToDelete !== null) {
-    //   this.service.deleteProduct(this.productIdToDelete).subscribe(
-    //     () => {
-    //       console.log('Product deleted successfully');
-    //       this.data = this.data.filter(
-    //         (product) => product.id !== this.productIdToDelete
-    //       );
-    //       this.closeDeleteModal();
-    //     },
-    //     (error) => {
-    //       console.error('Error deleting product:', error);
-    //       this.closeDeleteModal();
-    //     }
-    //   );
-    // }
-  }
+  attproductToUpdate: AttProductResponseDto = {
+    id: 0,
+    product: 0,
+    valeur: '',
+    cle: '',
+  };
 
-  openAddModal(): void {
-    this.newProduct = {
-      name: '',
-      description: '',
-      qteStock: 0,
-      prix: 0,
-      image: '',
-    };
+  isAddModalVisible = false;
+  isUpdateModalVisible = false;
+  isDeleteModalVisible = false;
+
+  openAddModal() {
     this.isAddModalVisible = true;
   }
 
-  closeAddModal(): void {
+  closeAddModal() {
     this.isAddModalVisible = false;
   }
 
-  saveNewProduct(): void {
-    // console.log(this.newProduct);
-    // this.service.createProduct(this.newProduct).subscribe(
-    //   (result: ProductResponseDto) => {
-    //     this.data.push(result);
-    //     this.closeAddModal();
-    //   },
-    //   (error) => {
-    //     console.error('Error adding product:', error);
-    //     this.closeAddModal();
-    //   }
-    // );
+  saveNewAttProduct() {
+    this.attProductservice.addProduct(this.attProduct).subscribe(
+      (result: AttProductResponseDto) => {
+        this.loadAttProducts();
+        this.closeAddModal();
+      },
+      (error) => {
+        console.error('Error adding product:', error);
+        this.closeAddModal();
+      }
+    );
+
+    this.attProduct = {
+      cle: '',
+      productId: 0,
+      valeur: '',
+    };
+    this.closeAddModal();
   }
 
-  openUpdateModal(product: ProductResponseDto): void {
-    this.productToUpdate = { ...product };
+  openUpdateModal(product: AttProductResponseDto) {
+    this.attproductToUpdate = { ...product };
     this.isUpdateModalVisible = true;
   }
 
-  closeUpdateModal(): void {
+  closeUpdateModal() {
     this.isUpdateModalVisible = false;
   }
 
-  saveUpdatedProduct(): void {
-    // const updateRequest: ProductRequestDto = {
-    //   name: this.productToUpdate.name,
-    //   description: this.productToUpdate.description,
-    //   qteStock: this.productToUpdate.qteStock,
-    //   prix: this.productToUpdate.prix,
-    //   image: this.productToUpdate.image,
-    // };
+  saveUpdatedAttProduct() {
+    this.attProductservice
+      .updateProduct(this.attproductToUpdate.id, {
+        cle: this.attproductToUpdate.cle,
+        //productId: 11,
+        productId: this.attproductToUpdate.product, // Ensure this matches your data structure
+        valeur: this.attproductToUpdate.valeur,
+      })
+      .subscribe(
+        (result) => {
+          this.loadAttProducts();
+          this.closeUpdateModal();
+        },
+        (error) => {
+          console.error('Error updating product:', error);
+          this.closeUpdateModal();
+        }
+      );
+  }
 
-    // this.service
-    //   .updateProduct(this.productToUpdate.id, updateRequest)
-    //   .subscribe(
-    //     (result: ProductResponseDto) => {
-    //       const index = this.data.findIndex(
-    //         (product) => product.id === result.id
-    //       );
-    //       if (index !== -1) {
-    //         this.data[index] = result;
-    //       }
-    //       this.closeUpdateModal();
-    //     },
-    //     (error) => {
-    //       console.error('Error updating product:', error);
-    //       this.closeUpdateModal();
-    //     }
-    //   );
+  openDeleteModal(productId: number) {
+    this.idProductToDelet = productId;
+    this.isDeleteModalVisible = true;
+  }
+
+  closeDeleteModal() {
+    this.isDeleteModalVisible = false;
+  }
+
+  deleteAttProduct() {
+    if (this.idProductToDelet != 0) {
+      this.attProductservice
+        .deleteProduct(this.idProductToDelet)
+        .subscribe(() => {
+          this.loadAttProducts();
+        });
+    }
+    this.closeDeleteModal();
   }
 }
