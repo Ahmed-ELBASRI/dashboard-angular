@@ -42,6 +42,7 @@
                         <th>Ville</th>
                         <th>Paiement</th>
                         <th>Validation</th>
+                        <th>Banner</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -58,8 +59,17 @@
                           </button>
                           </td>
                           <td>
-                          <button [routerLink]="" class="btn btn-sm btn-success btn-wave waves-effect waves-light">
-                            <i class="ri-check-line align-middle me-2 d-inline-block"></i>Valider
+                            <button [routerLink]="" [disabled]="vendeur.verifie_compte"
+                                    (click)="validerVendeur(vendeur.id_Vendeur)"
+                                    class="btn btn-sm btn-success btn-wave waves-effect waves-light">
+                              <i class="ri-check-line align-middle me-2 d-inline-block"></i>Valider
+                            </button>
+                          </td>
+                        <td>
+                          <button [routerLink]="" [disabled]="vendeur.block"
+                                  (click)="banVendeur(vendeur.id_Vendeur)"
+                                  class="btn custom-banner-btn">
+                            <i class="ri-check-line align-middle me-2 d-inline-block"></i>Banner
                           </button>
                         </td>
                       </tr>

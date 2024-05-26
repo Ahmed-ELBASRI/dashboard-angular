@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ProductResponseDto } from '../models/response/ProductResponceModel';
 import { ProductRequestDto } from '../models/request/ProductRequestModel';
+import { environment } from '../environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +12,7 @@ import { ProductRequestDto } from '../models/request/ProductRequestModel';
 export class ProductServiceService {
   constructor(private http: HttpClient) {}
   private baseUrl = 'https://localhost:7253/api/Product';
+  //private baseUrl = environment.apiUrl;
 
   getAllProducts(): Observable<ProductResponseDto[]> {
     return this.http.get<ProductResponseDto[]>(this.baseUrl);
