@@ -69,6 +69,9 @@ export class AppComponent implements OnInit{
 
       },
       Error => {
+        //
+        localStorage.setItem('role','user');
+        //
         console.log("error is here");
         console.log("Error occurred:", Error);
 
