@@ -42,6 +42,8 @@ export class AppComponent implements OnInit{
     this.authService.getRole(authToken).subscribe(
       Response => {
         console.log(Response);
+        localStorage.setItem('role','admin');
+
         console.log(Response); // Access the role property directly
 
 
