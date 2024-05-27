@@ -42,6 +42,8 @@ export class AppComponent implements OnInit{
     this.authService.getRole(authToken).subscribe(
       Response => {
         console.log(Response);
+        localStorage.setItem('role','admin');
+
         console.log(Response); // Access the role property directly
 
 
@@ -69,6 +71,9 @@ export class AppComponent implements OnInit{
 
       },
       Error => {
+        //
+        localStorage.setItem('role','user');
+        //
         console.log("error is here");
         console.log("Error occurred:", Error);
 

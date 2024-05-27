@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { listvendeurService } from '../listvendeur-service.service';
 import {AdminVendeurDto} from "../../Dtos/AdminVendeurDto";
+import {SignalRService} from "../../signal-r.service";
 
 @Component({
   selector: 'app-listvendeur',
@@ -8,9 +9,16 @@ import {AdminVendeurDto} from "../../Dtos/AdminVendeurDto";
   styleUrls: ['./listvendeur.component.css']
 })
 export class ListvendeurComponent implements OnInit {
-  vendeurs:  any = [];
-  constructor(private listvendeurService: listvendeurService){}
+  vendeurs:  any[] = [];
+  constructor(private listvendeurService: listvendeurService , private signalRService: SignalRService){}
   ngOnInit(): void{
+
+    this.signalRService.userValidated.subscribe(userId => {
+      const user = this.vendeurs.find(u => u.id_Vendeur === userId);
+      if (user) {
+        user.verifie_compte = true;
+      }
+    });
     this.loadCommands();
   }
   loadCommands(): void{
