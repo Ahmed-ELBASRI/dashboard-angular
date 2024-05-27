@@ -28,7 +28,6 @@ import {VendeurpaiementComponent} from "./admin/vendeurpaiement/vendeurpaiement.
     AppRoutingModule,
     SharedModule,
     VendeurModule,
-    FormsModule,
     RouterModule,
     VendeurModule,
     CommonModule

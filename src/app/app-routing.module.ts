@@ -10,6 +10,8 @@ import { CommandDetailsComponent } from './elements/command-details/command-deta
 import { VarianteComponent } from './variantes/variante/variante.component';
 import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component';
 import { VendeurpaiementComponent } from './admin/vendeurpaiement/vendeurpaiement.component';
+import { ProductsComponent } from './elements/products/products.component';
+import { AttProductsComponent } from './elements/attproducts/attproducts.component';
 
 
 const routes: Routes = [
@@ -18,10 +20,12 @@ const routes: Routes = [
   { path: 'retours' , component: RetoursComponent },
   { path: 'bilan' , component: BilanComponent },
   { path: 'plans' , component: PlansComponent },
-  { path: 'paiement' , component: PaiementComponent  },
+  { path: 'paiement' , component: PaiementComponent},
   { path: 'details/:id', component: CommandDetailsComponent },
   { path: 'variante', component: VarianteComponent },
   { path: 'listvendeur', component: ListvendeurComponent },
+  { path: 'products', component: ProductsComponent},
+  { path: 'attproduit', component: AttProductsComponent},
   { path: 'vendeurpaiement/:id', component: VendeurpaiementComponent}
 ];
 
