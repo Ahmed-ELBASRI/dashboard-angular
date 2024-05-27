@@ -1,0 +1,19 @@
+.custom-banner-btn {
+  background-color: #f44336; /* Red background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  padding: 5px 10px; /* Add some padding */
+  font-size: 14px; /* Adjust font size */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.custom-banner-btn:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.custom-banner-btn:disabled {
+  background-color: #f44336; /* Light red background when disabled */
+  color: #fff; /* Keep white text when disabled */
+  cursor: not-allowed; /* Change cursor to not-allowed when disabled */
+  opacity: 0.6; /* Add some opacity to show disabled state */
+}

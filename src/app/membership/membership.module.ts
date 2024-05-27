@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlansComponent } from './plans/plans.component';
 import { PaiementComponent } from './paiement/paiement.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -11,7 +13,13 @@ import { PaiementComponent } from './paiement/paiement.component';
     PaiementComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    HttpClientModule
+  ],
+  exports:[
+    PaiementComponent,
+    PlansComponent
   ]
 })
 export class MembershipModule { }
