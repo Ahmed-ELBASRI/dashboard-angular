@@ -15,6 +15,7 @@ import { CommandDetailsComponent } from './command-details/command-details.compo
 import { ProductsComponent } from './products/products.component';
 import { FormsModule } from '@angular/forms';
 import { AttProductsComponent } from './attproducts/attproducts.component';
+import { SingleCustComponent } from './bilan/recent-cust/single-cust/single-cust.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { AttProductsComponent } from './attproducts/attproducts.component';
     CommandDetailsComponent,
     ProductsComponent,
     AttProductsComponent,
+    SingleCustComponent
   ],
   imports: [
     CommonModule,
