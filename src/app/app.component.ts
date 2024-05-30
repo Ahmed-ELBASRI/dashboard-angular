@@ -49,16 +49,16 @@ export class AppComponent implements OnInit{
 
 
         // Assuming the response is an object containing a JSON string in the "role" property
-        const responseObject = Response as { role: string }; // Define the structure of the object
+       // const responseObject = Response as { role: string }; // Define the structure of the object
 
         // Parse the JSON string in the "role" property
-        const roleObject = JSON.parse(responseObject.role);
+      //  const roleObject = JSON.parse(responseObject.role);
 
         // Access properties of the parsed JSON object
-        console.log(roleObject.propertyName);
+      //  console.log(roleObject.propertyName);
 
         // Or directly access properties of the parsed JSON object
-        console.log(JSON.parse(responseObject.role).propertyName);
+       // console.log(JSON.parse(responseObject.role).propertyName);
 
 
         // const roleObject = JSON.parse(Response.toString()); // Parse the JSON string into an object
