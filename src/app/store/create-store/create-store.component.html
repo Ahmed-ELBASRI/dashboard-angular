@@ -1,0 +1,35 @@
+<div class="main-content app-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="card custom-card">
+            <div class="card-header justify-content-between">
+              <div class="card-title">Vertical Forms</div>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="storeForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                  <label for="namestore" class="form-label fs-14 text-dark">Enter store name</label>
+                  <input type="text" class="form-control" id="namestore" formControlName="nom_store" />
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label fs-14 text-dark">Enter Description :</label>
+                  <input type="text" class="form-control" id="description" formControlName="description" />
+                </div>
+                <div class="mb-3">
+                  <label for="urlstore" class="form-label fs-14 text-dark">Enter url store :</label>
+                  <input type="text" class="form-control" id="urlstore" formControlName="urlstore" />
+                </div>
+                <div class="mb-3">
+                  <label for="formFileMultiple" class="form-label">Logo :</label>
+                  <input class="form-control" type="file" id="formFileMultiple" (change)="onFileChange($event)" />
+                </div>
+                <button class="btn btn-primary" type="submit" [disabled]="!storeForm.valid">Create</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

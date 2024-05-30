@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { VendeurModule } from './vendeur/vendeur.module';
 import { RouterModule } from '@angular/router';
-
 import { ElementsModule } from './elements/elements.module';
 import { ProductsComponent } from './elements/products/products.component';
 import {CommonModule, NgClass} from '@angular/common';
@@ -16,6 +15,7 @@ import {VendeurpaiementComponent} from "./admin/vendeurpaiement/vendeurpaiement.
 import {FormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { CommandDetailsService } from './elements/command-details/command-details.service';
+import { StoreModule } from './store/store.module';
 
 
 @NgModule({
@@ -34,7 +34,8 @@ import { CommandDetailsService } from './elements/command-details/command-detail
     RouterModule,
     VendeurModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule
   ],
   providers: [],
   bootstrap: [AppComponent],
