@@ -13,6 +13,7 @@ import { VendeurpaiementComponent } from './admin/vendeurpaiement/vendeurpaiemen
 import {authGuard} from "./auth.guard";
 import { ProductsComponent } from './elements/products/products.component';
 import { AttProductsComponent } from './elements/attproducts/attproducts.component';
+import { CreateStoreComponent } from './store/create-store/create-store.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'listvendeur', component: ListvendeurComponent },
   { path: 'products', component: ProductsComponent},
   { path: 'attproduit', component: AttProductsComponent},
-  { path: 'vendeurpaiement/:id', component: VendeurpaiementComponent}
+  { path: 'vendeurpaiement/:id', component: VendeurpaiementComponent},
+  { path: 'store', component: CreateStoreComponent}
 ];
 
 @NgModule({

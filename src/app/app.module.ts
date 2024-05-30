@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { VendeurModule } from './vendeur/vendeur.module';
 import { RouterModule } from '@angular/router';
-
 import { ElementsModule } from './elements/elements.module';
 import { ProductsComponent } from './elements/products/products.component';
 import {CommonModule, NgClass} from '@angular/common';
@@ -14,6 +13,7 @@ import { VarianteComponent } from './variantes/variante/variante.component';
 import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component';
 import {VendeurpaiementComponent} from "./admin/vendeurpaiement/vendeurpaiement.component";
 import {FormsModule} from "@angular/forms";
+import { StoreModule } from './store/store.module';
 
 
 @NgModule({
@@ -31,7 +31,8 @@ import {FormsModule} from "@angular/forms";
     VendeurModule,
     RouterModule,
     VendeurModule,
-    CommonModule
+    CommonModule,
+    StoreModule
   ],
   providers: [],
   bootstrap: [AppComponent],
