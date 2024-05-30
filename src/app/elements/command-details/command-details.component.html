@@ -31,35 +31,44 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <!-- Utilisez *ngFor pour parcourir chaque ligne de commande -->
+                                    <tr *ngFor="let ligne of lignesCommande">
                                         <td>
                                             <div class="media">
                                                 <div class="card-aside-img">
-                                                    <img src="../assets/images/ecommerce/01.jpg" alt="img" class="h-60 w-60">
+                                                    <!-- Utilisez ligne.product.image pour l'image du produit -->
+                                                    <img  alt="img" class="h-60 w-60">
                                                 </div>
                                                 <div class="media-body">
                                                     <div class="card-item-desc mt-0">
-                                                        <h6 class="fw-medium mt-0 text-uppercase fs-14">party wear</h6>
+                                                        <!-- Utilisez ligne.product.name pour le nom du produit -->
+                                                        <h6 class="fw-medium mt-0 text-uppercase fs-14"></h6>
+                                                        <!-- Utilisez ligne.product.size pour la taille du produit -->
                                                         <dl class="card-item-desc-1">
                                                           <dt>Size: </dt>
-                                                          <dd class="mb-0">XXL</dd>
+                                                          <dd class="mb-0"></dd>
                                                         </dl>
+                                                        <!-- Utilisez ligne.product.color pour la couleur du produit -->
                                                         <dl class="card-item-desc-1">
                                                           <dt>Color: </dt>
-                                                          <dd class="mb-0">purple color</dd>
+                                                          <dd class="mb-0"></dd>
                                                         </dl>
                                                     </div>
                                                 </div>
                                             </div>
                                         </td>
+                                       <!-- Utilisez ligne.quantity pour la quantité de produit -->
                                        <td class="text-center product-quantity-container">
                                         <div class="handle-counter input-group rounded flex-nowrap">
-                                           
+                                            {{ ligne.quantite}}
                                         </div>
+                                       
                                         </td>
-                                        <td class="text-center text-lg text-medium fw-bold  fs-15">$80.00</td>
-                                        
-                                     </tr>
+                                        <!-- Utilisez ligne.price pour le prix de la ligne de commande -->
+                                        <td class="text-center text-lg text-medium fw-bold  fs-15">
+                                          {{ ligne.produitUnitaire * ligne.quantite}}
+                                            </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
