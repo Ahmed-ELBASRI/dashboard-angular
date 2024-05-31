@@ -14,6 +14,8 @@ import { VarianteComponent } from './variantes/variante/variante.component';
 import { ListvendeurComponent } from './admin/listvendeur/listvendeur.component';
 import {VendeurpaiementComponent} from "./admin/vendeurpaiement/vendeurpaiement.component";
 import {FormsModule} from "@angular/forms";
+import { MembershipModule } from './membership/membership.module';
+
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import {FormsModule} from "@angular/forms";
     VarianteComponent,
     ListvendeurComponent,
     VendeurpaiementComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import {FormsModule} from "@angular/forms";
     VendeurModule,
     RouterModule,
     VendeurModule,
-    CommonModule
+    CommonModule,
+    MembershipModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -2,24 +2,28 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlansComponent } from './plans/plans.component';
 import { PaiementComponent } from './paiement/paiement.component';
-import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { RouterModule } from '@angular/router';
+import { SuccessComponent } from './success/success.component';
+import { CancelComponent } from './cancel/cancel.component';
 
 @NgModule({
   declarations: [
     PlansComponent,
-    PaiementComponent
+    PaiementComponent,
+    SuccessComponent,
+    CancelComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forChild([])
+
   ],
   exports:[
+    PlansComponent,
     PaiementComponent,
-    PlansComponent
+    RouterModule 
   ]
 })
 export class MembershipModule { }

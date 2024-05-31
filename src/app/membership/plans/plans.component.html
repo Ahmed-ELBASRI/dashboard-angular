@@ -1,6 +1,5 @@
 <div class="main-content app-content">
     <div class="container-fluid">
-        <h4 class="card-title mt-4 mb-3">Pricing cards 4 columns</h4>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-lg-6 col-xl-3">
                 <div class="panel price panel-color">
@@ -18,7 +17,7 @@
                         <li class="list-group-item border-bottom-0"><strong> 24/7</strong> support</li>
                     </ul>
                     <div class="panel-footer text-center">
-                        <a class="btn btn-primary" >Purchase Now!</a>
+                        <a class="btn btn-primary" [routerLink]="['/paiement', 1]">Purchase Now!</a>
                     </div>
                 </div>
             </div><!-- COL-END -->
@@ -38,7 +37,7 @@
                         <li class="list-group-item border-bottom-0"><strong> 24/7</strong> support</li>
                     </ul>
                     <div class="panel-footer text-center">
-                        <a class="btn btn-warning" >Purchase Now!</a>
+                        <a class="btn btn-primary" [routerLink]="['/paiement', 2]">Purchase Now!</a>
                     </div>
                 </div>
             </div><!-- COL-END -->
@@ -58,11 +57,10 @@
                         <li class="list-group-item border-bottom-0"><strong> 24/7</strong> support</li>
                     </ul>
                     <div class="panel-footer text-center">
-                        <a class="btn btn-success">Purchase Now!</a>
+                        <a class="btn btn-primary" [routerLink]="['/paiement', 3]">Purchase Now!</a>
                     </div>
                 </div>
             </div><!-- COL-END -->
-
         </div>
     </div>
 </div>
