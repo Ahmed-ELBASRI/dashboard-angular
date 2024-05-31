@@ -16,6 +16,8 @@ import { ProductsComponent } from './elements/products/products.component';
 import { AttProductsComponent } from './elements/attproducts/attproducts.component';
 import { SuccessComponent } from './membership/success/success.component';
 import { CancelComponent } from './membership/cancel/cancel.component';
+import { CreateStoreComponent } from './store/create-store/create-store.component';
+
 
 const routes: Routes = [
   { path: 'editprofile', component: EditprofileComponent , canActivate : [authGuard]  ,data : {role : 'user'}},
@@ -32,7 +34,8 @@ const routes: Routes = [
   { path: 'vendeurpaiement/:id', component: VendeurpaiementComponent},
   { path: 'paiement/:id', component: PaiementComponent },
   { path: 'success', component: SuccessComponent}, 
-  { path: 'cancel', component: CancelComponent}
+  { path: 'cancel', component: CancelComponent},
+  { path: 'store', component: CreateStoreComponent}
 ];
 
 @NgModule({

@@ -23,7 +23,7 @@ export class SignalRService {
       this.userValidated.emit(userId);
     });
 
-    this.hubConnection.start().catch(err => console.error(err));
+    this.hubConnection.start().catch((err: any) => console.error(err));
   }
 
 
