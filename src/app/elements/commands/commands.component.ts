@@ -12,15 +12,28 @@ export class CommandsComponent implements OnInit{
     this.loadCommands();
   }
   loadCommands(): void{
-    this.commandsService.getCommands().subscribe(
-    (response: any) => {
-      this.commands = response;
-      console.log(response);
-      console.log("getCommands");
-    },
-    (error) => {
-      console.error('Error fetching profile data', error);
-    }
-  );
+    let idVendeur =localStorage.getItem('id');
+    //get store name
+    this.commandsService.getStoreName(Number(idVendeur)).subscribe(
+      Response => {
+        console.log(Response);
+        this.commandsService.getCommands(Response).subscribe(
+          (response: any) => {
+            this.commands = response;
+            console.log(response);
+            console.log("getCommands");
+          },
+          (error) => {
+            console.error('Error fetching profile data', error);
+          }
+        );
+
+      },
+      Error => {
+        console.log(Error);
+      }
+    );
+    //get command from that name store
+
   }
 }

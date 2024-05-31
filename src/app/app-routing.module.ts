@@ -19,18 +19,17 @@ import { CreateStoreComponent } from './store/create-store/create-store.componen
 const routes: Routes = [
   { path: 'editprofile', component: EditprofileComponent , canActivate : [authGuard]  ,data : {role : 'user'}},
   { path: 'Commands' , component: CommandsComponent },
-  { path: 'retours' , component: RetoursComponent },
-  { path: 'bilan' , component: BilanComponent },
-  { path: 'plans' , component: PlansComponent },
-  { path: 'paiement' , component: PaiementComponent},
+  { path: 'retours' , component: RetoursComponent , canActivate : [authGuard]  ,data : {role : 'vendeur'} },
+  { path: 'bilan' , component: BilanComponent , canActivate : [authGuard]  ,data : {role : ['vendeur','admin']} },
+  { path: 'plans' , component: PlansComponent , canActivate : [authGuard]  ,data : {role : 'user'} },
+  { path: 'paiement' , component: PaiementComponent , canActivate : [authGuard]  ,data : {role : 'user'}},
   { path: 'details/:id', component: CommandDetailsComponent },
-  { path: 'variante', component: VarianteComponent },
-  { path: 'listvendeur', component: ListvendeurComponent , canActivate : [authGuard] , data : {role : ['admin','user']} },
-  { path: 'listvendeur', component: ListvendeurComponent },
-  { path: 'products', component: ProductsComponent},
-  { path: 'attproduit', component: AttProductsComponent},
-  { path: 'vendeurpaiement/:id', component: VendeurpaiementComponent},
-  { path: 'store', component: CreateStoreComponent}
+  { path: 'variante', component: VarianteComponent  , canActivate : [authGuard]  ,data : {role : 'user'}},
+  { path: 'listvendeur', component: ListvendeurComponent , canActivate : [authGuard] , data : {role : 'admin'} },
+  { path: 'products', component: ProductsComponent , canActivate : [authGuard]  ,data : {role : 'vendeur'}},
+  { path: 'attproduit', component: AttProductsComponent , canActivate : [authGuard]  ,data : {role : 'vendeur'}} ,
+  { path: 'vendeurpaiement/:id', component: VendeurpaiementComponent , canActivate : [authGuard]  ,data : {role : 'admin'}},
+  { path: 'store', component: CreateStoreComponent , canActivate : [authGuard]  ,data : {role : 'vendeur'}}
 ];
 
 @NgModule({
